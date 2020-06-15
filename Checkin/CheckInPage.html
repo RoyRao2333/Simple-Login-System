@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckIn System</title>
+    <style type="text/css">
+        .center {
+            text-align: center;
+            color: #2a5caa;
+        }
+    </style>
+    <script type="text/javascript">
+        function validateForm() {
+            var username = document.getElementById("userid").value;
+            var password = document.getElementById("password").value;
+            if (username.length == 0 || password.length == 0) {
+                alert("Must enter your ID and password to proceed.");
+            } else {
+                document.forms.namedItem("loginForm").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; line-height: 10px">
+        <h1 class="center">CheckIn System</h1>
+        <br>
+        <a href="../SignUp/SignUpPage.html">SignUp</a>
+    </div>
+    <hr>
+    <div style="text-align: center; line-height: 50px">
+        <br>
+        <form name="loginForm" action="CheckIn.php" method="post">
+            <label for="userid">User's ID: </label> <input type="text" id="userid" name="userid">
+            <br>
+            <label for="password">Password: </label> <input type="password" id="password" name="password">
+            <br>
+            <label for="role">Role: </label>
+            <select id="role" name="role">
+                <option>Student</option>
+                <option>Teacher</option>
+            </select>
+        </form>
+        <button type="button" id="submitBtn" onclick="validateForm()">Login</button>
+    </div>
+</body>
+</html>
